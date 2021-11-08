@@ -1,0 +1,124 @@
+class Shop {  
+  PImage img;
+  float shopX;  
+  float shopY;  
+  float shopW;  
+  float shopH;  
+  color shopColor;  
+  float sprinkleX = 945;  
+  float sprinkleY = 155;  
+  float sprinkleW;  
+  float sprinkleH;  
+
+  Shop(float initX, float initY, float initW, float initH, color initColor) {  
+    shopX = initX;  
+    shopY = initY;  
+    shopW = initW;  
+    shopH = initH;  
+    shopColor = initColor;
+  }  
+
+  void display() {  
+ 
+    strokeWeight(5);
+    stroke(171,0,142);
+
+    //Building  
+    fill(255, 102, 179);  
+    rect(shopX, shopY, shopW, shopH); //700, 250, 400, 250  
+
+    fill(255, 255, 255);  
+    //Shop name board 
+    img = loadImage("Royaldonuts.png");  
+    image(img, 710, 260, 380, 70);    
+
+    //Shop window 
+    img = loadImage("window.png");  
+    image(img, 740, 350, 175, 125);  
+    
+    img = loadImage("Shop1.jpg");  
+    image(img, 970, 350, 100, 150);  
+    
+    //Shop door  
+    noFill();
+    stroke(171,0,142);
+    strokeWeight(7);
+    rect(970, 350, 100, 150);  
+    
+    strokeWeight(5);
+    stroke(171,0,142);
+
+    //Shop outside  
+    fill(255, 102, 179);  
+    quad(700, 250, 1100, 250, 1150, 200, 750, 200);  
+    quad(1150, 200, 1100, 250, 1100, 500, 1150, 450);
+    
+    strokeWeight(5);
+    stroke(0);
+    rect(900, 130, 20, 100);  
+
+    //Donut  
+    strokeWeight(1);
+    noStroke();
+    fill(0, 0, 0);  
+    ellipse(915, 115, 150, 150);  
+    
+    strokeWeight(5);
+    stroke(0);
+    fill(222, 184, 135);  
+    ellipse(910, 120, 150, 150);  
+
+
+    //Hole donut  
+    fill(255, 255, 255);  
+    ellipse(910, 120, 50, 50);  
+
+    //Donut topping  
+    fill(255, 102, 179);  
+    noStroke();  
+    ellipse(860, 120, 50, 50);  
+    ellipse(875, 85, 50, 50);  
+    ellipse(910, 70, 50, 50);  
+    ellipse(960, 120, 50, 50);  
+    ellipse(910, 170, 50, 50);  
+    ellipse(875, 155, 50, 50);  
+    ellipse(945, 85, 50, 50);  
+    ellipse(945, 155, 50, 50);  
+    
+    strokeWeight(1);
+    noStroke();
+
+    //Donut sprinkles         
+    //White  
+    fill(255, 255, 255);  
+    ellipse(sprinkleX, sprinkleY, 5, 15); //945, 155, 5, 15  
+    ellipse(sprinkleX +10, sprinkleY -40, 5, 15);  
+    ellipse(865, 105, 5, 15);      
+
+    //Red  
+    fill(255, 0, 0);  
+    ellipse(sprinkleX -10, sprinkleY +5, 5, 15);  
+    ellipse(950, 90, 5, 15);  
+    ellipse(850, 120, 5, 15);      
+
+    //Teal  
+    fill(0, 128, 128);  
+    ellipse(905, 160, 5, 15);  
+    ellipse(895, 80, 5, 15);  
+    ellipse(860, 130, 5, 15);  
+
+    //Yellow  
+    fill(255, 255, 0);  
+    ellipse(880, 155, 5, 15);  
+    ellipse(920, 75, 5, 15);        
+
+    //Cyan  
+    fill(0, 255, 255);  
+    ellipse(875, 130, 5, 15);  
+    ellipse(870, 80, 5, 15);  
+    ellipse(915, 170, 5, 15);   
+    ellipse(970, 130, 5, 15);      
+
+    noFill();
+  }
+}  

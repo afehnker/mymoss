@@ -1,0 +1,45 @@
+/* This is the LightSwicht class, this class(ZORgt ervoor) that the lightbulbs on top of the
+ screen light up when the mouse hovers over the lightswicht. And (ZORGT ERVOOR) that the
+ lights turn off when the mouse doesn't hover over the lightswicht. The switch itself is also
+ dakjsdfjk in here*/
+
+class LightSwitch {
+  int buttonX;
+  int buttonY;
+  int xMouse;
+  int yMouse;
+  color ColorBulbs;
+  color ColorOn= color (0, 255, 0);
+  color ColorOff = color (255, 0, 0);
+  color ColorShine = color (0, 0, 0, 0);
+
+  LightSwitch(int initButtonX, int initButtonY) {
+    buttonX = initButtonX;
+    buttonY = initButtonY;
+  }
+
+  void display(int initMouseX, int initMouseY) {
+    xMouse = initMouseX;
+    yMouse = initMouseY;
+    fill(0);
+    strokeWeight(3);
+    ellipse(buttonX, buttonY, 50, 50);
+    fill(255);
+    rect(buttonX, buttonY, 40, 20);
+
+    if (dist(xMouse, yMouse, buttonX, buttonY)<=25) {
+      ColorBulbs = color(233, 233, 0);
+      fill(ColorOn);
+      stroke(0);
+      strokeWeight(3);
+      rect(buttonX +10, buttonY, 10, 10);
+      ColorShine = color(233, 233, 0, 20);
+    } else {
+      ColorBulbs = color(210, 210, 210);
+      fill(ColorOff);
+      strokeWeight(3);
+      rect(buttonX - 10, buttonY, 10, 10);
+      ColorShine = color(2552, 255, 255, 1);
+    }
+  }
+}

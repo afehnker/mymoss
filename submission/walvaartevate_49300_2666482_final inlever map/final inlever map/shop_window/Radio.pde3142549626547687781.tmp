@@ -1,0 +1,73 @@
+/* this is the class of the Radio */
+class Radio {
+  int xRadio;
+  int yRadio;
+  int xRadioSize;
+  int yRadioSize;
+  int xButton;
+  int yButton;
+  boolean radioOn = false;
+  int xMouse;
+  int yMouse;
+  int xRecButton;
+  int yRecButton;
+
+
+  Radio(int initXRadio, int initYRadio, int initxRadioSize, int inityRadioSize) {
+    xRadio = initXRadio;
+    yRadio = initYRadio;
+    xRadioSize = initxRadioSize;
+    yRadioSize = inityRadioSize;
+  }
+
+  void display() {
+    fill(215, 172, 98);
+    pushMatrix();
+    translate(xRadio, yRadio-15);
+    rect(0, 0, xRadioSize, yRadioSize, 5);//back layer of radio
+    fill(0);
+    rect(-0.5*xRadioSize+20, 0.5*yRadioSize+10, 20, 20); //pootje rechts
+    rect(0.5*xRadioSize-20, 0.5*yRadioSize+10, 20, 20); //pootje links
+    strokeWeight(3);
+    fill(134);
+    rect(0, -18, (xRadioSize+10)*0.75, yRadioSize*0.6, 20, 20, 0, 0);//screen
+    fill(222, 222, 222);
+    rect(0, 45, (xRadioSize+10)*0.75, yRadioSize*0.3, 0, 0, 20, 20);//space for the knobs/buttons
+    strokeWeight(1);
+
+    //buttons of the radio
+    xButton = -85;
+    yButton = 40;
+    fill(80);
+    ellipse(xButton, yButton, 26, 26);//button
+    //play
+    xRecButton = -55;
+    yRecButton = 55;
+    fill(190);
+    //Play button
+    rect(xRecButton, yRecButton, 15, 15);
+    fill(0);
+    triangle(xRecButton-4, yRecButton+4, xRecButton-4, yRecButton-4, xRecButton+4, yRecButton);
+    //Pause Button
+    fill(190);
+    rect(xRecButton+20, yRecButton, 15, 15);
+    fill(0);
+    rect(xRecButton+17, yRecButton, 3, 10);//right stripe of pause icon
+    rect(xRecButton+23, yRecButton, 3, 10);//left stripe of pause icon
+
+    //Stop Button
+    fill(190);
+    rect(xRecButton+40, yRecButton, 15, 15);
+
+    popMatrix();
+  }
+
+  void update(int initXmouse, int initYmouse) {
+    xMouse= initXmouse ;
+    yMouse = initYmouse;
+
+    if (dist(xMouse, yMouse, xRadio+ xButton, yRadio+ yButton-13)<=13) {
+      file.play();
+    }
+  }
+}

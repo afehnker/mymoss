@@ -1,0 +1,71 @@
+/* This is the LightSwicht class, this class(ZORgt ervoor) that the lightbulbs on top of the
+ screen light up when the mouse hovers over the lightswicht. And (ZORGT ERVOOR) that the
+ lights turn off when the mouse doesn't hover over the lightswicht. The switch itself is also
+ dakjsdfjk in here*/
+
+class LightSwitch {
+  int buttonX;
+  int buttonY;
+  int xMouse;
+  int yMouse;
+  color ColorBulbs;
+  color ColorOn= color (0, 255, 0);
+  color ColorOff = color (255, 0, 0);
+  color ColorShine = color (0, 0, 0, 0);
+  boolean turnOn = false;
+  boolean disco = false;
+int redYellowOrDisco = 233;
+int greenYellowOrDisco =223;
+int blueYellowOrDisco =0;
+
+  LightSwitch(int initButtonX, int initButtonY) {
+    buttonX = initButtonX;
+    buttonY = initButtonY;
+  }
+
+  void display() {
+    fill(0);
+    strokeWeight(3);
+    fill(255);
+    stroke(0);
+    strokeWeight(3);
+    rect(buttonX, buttonY, 50, 30, 10);
+
+    if (turnOn==true) {
+      
+      fill(ColorOn);
+      ellipse(buttonX +10, buttonY, 14, 14);
+      ColorShine = color(233, 233, 0, 20);
+    } else {
+      fill(ColorOff);
+      ellipse(buttonX - 10, buttonY, 14, 14);
+      ColorShine = color(255, 255, 255, 1);
+    }
+    if (turnOn==true && radio01.radioOn ==true) {
+      disco = true;
+    }
+    if (disco == true) {
+      redYellowOrDisco = int(random(0, 255));
+      greenYellowOrDisco =int(random(0, 255));
+      blueYellowOrDisco = int(random(0, 255));
+    }
+    if (turnOn == false||radio01.radioOn==false){
+      disco = false;
+       redYellowOrDisco = 223;
+       greenYellowOrDisco = 223;
+      blueYellowOrDisco = 223;
+      
+    }
+  }
+
+  void update(int initMouseX, int initMouseY) {
+    xMouse = initMouseX;
+    yMouse = initMouseY;
+    if (dist(xMouse, yMouse, buttonX-10, buttonY)<=30) {
+      turnOn =true ;
+    }
+    if (dist(xMouse, yMouse, buttonX+10, buttonY)<=7 && turnOn ==true) {
+      turnOn = false;
+    }
+  }
+}

@@ -1,0 +1,171 @@
+class Family {        class Family {  
+  PImage img;          PImage img;  
+  float familyX;          float familyX;  
+  float familyY;          float familyY;  
+  float familyW;          float familyW;  
+  float familyH;         float familyH; 
+  PImage maggie;        PImage maggie;
+  PImage marge;        PImage marge;
+  PImage bart;        PImage bart;
+  PImage lisa;        PImage lisa;
+      
+  Family(float initX, float initY, float initW, float initH) {          Family(float initX, float initY, float initW, float initH) {  
+    familyX = initX;            familyX = initX;  
+    familyY = initY;            familyY = initY;  
+    familyW = initW;            familyW = initW;  
+    familyH = initH;          familyH = initH;
+  }          }  
+      
+  void images() {        void images() {
+    maggie = loadImage("Maggie.png");           maggie = loadImage("Maggie.png"); 
+    marge = loadImage("Marge.png");          marge = loadImage("Marge.png");
+    bart = loadImage("Bart.png");          bart = loadImage("Bart.png");
+    lisa = loadImage("Lisa.png");          lisa = loadImage("Lisa.png");
+  }        }
+      
+  void display() {          void display() {  
+    // images of the family          // images of the family
+    image(maggie, 1260, 400, 100, 100);             image(maggie, 1260, 400, 100, 100);   
+    image(marge, 1115, 240, 235, 270);             image(marge, 1115, 240, 235, 270);   
+    image(bart, 1390, 320, 150, 190);             image(bart, 1390, 320, 150, 190);   
+    image(lisa, 1340, 350, 75, 150);          image(lisa, 1340, 350, 75, 150);
+              
+    //Body            //Body  
+    fill(0, 0, 0);            fill(0, 0, 0);  
+    ellipse(familyX, familyY, familyW, familyH +20);             ellipse(familyX, familyY, familyW, familyH +20);   
+      
+    //Arms            //Arms  
+    ellipse(familyX -35, familyY -10, familyW, familyH -91);            ellipse(familyX -35, familyY -10, familyW, familyH -91);  
+    ellipse(familyX +30, familyY -10, familyW, familyH -91);            ellipse(familyX +30, familyY -10, familyW, familyH -91);  
+      
+    //Legs            //Legs  
+    ellipse(familyX -10, familyY +65, familyW -31, familyH -60);            ellipse(familyX -10, familyY +65, familyW -31, familyH -60);  
+    ellipse(familyX +10, familyY +65, familyW -31, familyH -60);            ellipse(familyX +10, familyY +65, familyW -31, familyH -60);  
+      
+    //Head            //Head  
+    fill(255, 255, 0);            fill(255, 255, 0);  
+    ellipse(familyX, familyY -65, familyW +5, familyH -45);            ellipse(familyX, familyY -65, familyW +5, familyH -45);  
+    fill(255, 255, 255);            fill(255, 255, 255);  
+    ellipse(familyX -10, familyY -60, familyW -30, familyH -90);            ellipse(familyX -10, familyY -60, familyW -30, familyH -90);  
+    ellipse(familyX +10, familyY -60, familyW -30, familyH -90);            ellipse(familyX +10, familyY -60, familyW -30, familyH -90);  
+      
+    fill(0, 0, 0);            fill(0, 0, 0);  
+    ellipse(familyX -10, familyY -60, familyW -35, familyH -95);            ellipse(familyX -10, familyY -60, familyW -35, familyH -95);  
+    ellipse(familyX +10, familyY -60, familyW -35, familyH -95);            ellipse(familyX +10, familyY -60, familyW -35, familyH -95);  
+    ellipse(familyX, familyY -50, familyW -25, familyH -90);            ellipse(familyX, familyY -50, familyW -25, familyH -90);  
+      
+    //Hair            //Hair  
+    fill(51, 119, 255);            fill(51, 119, 255);  
+    ellipse(familyX, familyY -143, familyW -25, familyH -85);            ellipse(familyX, familyY -143, familyW -25, familyH -85);  
+    ellipse(familyX -15, familyY -114, familyW -25, familyH -85);            ellipse(familyX -15, familyY -114, familyW -25, familyH -85);  
+    ellipse(familyX +15, familyY -114, familyW -25, familyH -85);            ellipse(familyX +15, familyY -114, familyW -25, familyH -85);  
+      
+    ellipse(familyX -8, familyY -141, familyW -25, familyH -85);            ellipse(familyX -8, familyY -141, familyW -25, familyH -85);  
+    ellipse(familyX +7, familyY -141, familyW -25, familyH -85);            ellipse(familyX +7, familyY -141, familyW -25, familyH -85);  
+      
+    ellipse(familyX -15, familyY -123, familyW -25, familyH -85);            ellipse(familyX -15, familyY -123, familyW -25, familyH -85);  
+    ellipse(familyX +15, familyY -123, familyW -25, familyH -85);            ellipse(familyX +15, familyY -123, familyW -25, familyH -85);  
+      
+    ellipse(familyX -15, familyY -132, familyW -25, familyH -85);            ellipse(familyX -15, familyY -132, familyW -25, familyH -85);  
+    ellipse(familyX +15, familyY -132, familyW -25, familyH -85);            ellipse(familyX +15, familyY -132, familyW -25, familyH -85);  
+      
+    ellipse(familyX -15, familyY -105, familyW -25, familyH -85);            ellipse(familyX -15, familyY -105, familyW -25, familyH -85);  
+    ellipse(familyX +15, familyY -105, familyW -25, familyH -85);            ellipse(familyX +15, familyY -105, familyW -25, familyH -85);  
+    ellipse(familyX +15, familyY -96, familyW -25, familyH -85);            ellipse(familyX +15, familyY -96, familyW -25, familyH -85);  
+    ellipse(familyX +15, familyY -87, familyW -25, familyH -85);                ellipse(familyX +15, familyY -87, familyW -25, familyH -85);      
+    ellipse(familyX +15, familyY -78, familyW -25, familyH -85);            ellipse(familyX +15, familyY -78, familyW -25, familyH -85);  
+    ellipse(familyX -15, familyY -96, familyW -25, familyH -85);            ellipse(familyX -15, familyY -96, familyW -25, familyH -85);  
+    ellipse(familyX -15, familyY -87, familyW -25, familyH -85);            ellipse(familyX -15, familyY -87, familyW -25, familyH -85);  
+    ellipse(familyX -15, familyY -78, familyW -25, familyH -85);            ellipse(familyX -15, familyY -78, familyW -25, familyH -85);  
+      
+    ellipse(familyX, familyY -80, familyW -20, familyH -80);            ellipse(familyX, familyY -80, familyW -20, familyH -80);  
+    ellipse(familyX, familyY -110, familyW -10, familyH -30);            ellipse(familyX, familyY -110, familyW -10, familyH -30);  
+      
+      
+    //Necklace            //Necklace  
+    fill(255, 0, 0);            fill(255, 0, 0);  
+    ellipse(familyX, familyY -35, familyW -30, familyH -90);            ellipse(familyX, familyY -35, familyW -30, familyH -90);  
+    ellipse(familyX -10, familyY -37, familyW -30, familyH -90);            ellipse(familyX -10, familyY -37, familyW -30, familyH -90);  
+    ellipse(familyX +10, familyY -37, familyW -30, familyH -90);            ellipse(familyX +10, familyY -37, familyW -30, familyH -90);  
+      
+      
+    //Bart            //Bart  
+    //Body            //Body  
+    ellipse(familyX +105, familyY +25, familyW -5, familyH);            ellipse(familyX +105, familyY +25, familyW -5, familyH);  
+      
+    //Arms            //Arms  
+    ellipse(familyX +130, familyY +15, familyW -10, familyH -93);            ellipse(familyX +130, familyY +15, familyW -10, familyH -93);  
+    ellipse(familyX +80, familyY +15, familyW -10, familyH -93);            ellipse(familyX +80, familyY +15, familyW -10, familyH -93);  
+      
+    //Legs            //Legs  
+    ellipse(familyX +95, familyY +85, familyW -31, familyH -60);            ellipse(familyX +95, familyY +85, familyW -31, familyH -60);  
+    ellipse(familyX +115, familyY +85, familyW -31, familyH -60);            ellipse(familyX +115, familyY +85, familyW -31, familyH -60);  
+      
+      
+    //Hair            //Hair  
+    fill(255, 255, 0);            fill(255, 255, 0);  
+    triangle(familyX +100, familyY -75, familyX +95, familyY -65, familyX +105, familyY -65);            triangle(familyX +100, familyY -75, familyX +95, familyY -65, familyX +105, familyY -65);  
+    triangle(familyX +90, familyY -75, familyX +85, familyY -65, familyX +95, familyY -65);            triangle(familyX +90, familyY -75, familyX +85, familyY -65, familyX +95, familyY -65);  
+    triangle(familyX +110, familyY -75, familyX +105, familyY -65, familyX +115, familyY -65);            triangle(familyX +110, familyY -75, familyX +105, familyY -65, familyX +115, familyY -65);  
+    triangle(familyX +120, familyY -75, familyX +115, familyY -65, familyX +125, familyY -65);            triangle(familyX +120, familyY -75, familyX +115, familyY -65, familyX +125, familyY -65);  
+      
+    //Head            //Head  
+    fill(255, 255, 0);            fill(255, 255, 0);  
+    quad(familyX +85, familyY -65, familyX +125, familyY -65, familyX +125, familyY -5, familyX +85, familyY -5);            quad(familyX +85, familyY -65, familyX +125, familyY -65, familyX +125, familyY -5, familyX +85, familyY -5);  
+    fill(255, 255, 255);            fill(255, 255, 255);  
+    ellipse(familyX +95, familyY -35, familyW -30, familyH -90);            ellipse(familyX +95, familyY -35, familyW -30, familyH -90);  
+    ellipse(familyX +115, familyY -35, familyW -30, familyH -90);            ellipse(familyX +115, familyY -35, familyW -30, familyH -90);  
+    fill(0, 0, 0);            fill(0, 0, 0);  
+    ellipse(familyX +95, familyY -35, familyW -35, familyH -95);            ellipse(familyX +95, familyY -35, familyW -35, familyH -95);  
+    ellipse(familyX +115, familyY -35, familyW -35, familyH -95);            ellipse(familyX +115, familyY -35, familyW -35, familyH -95);  
+    ellipse(familyX +105, familyY -15, familyW -25, familyH -90);            ellipse(familyX +105, familyY -15, familyW -25, familyH -90);  
+      
+      
+      
+    //Lisa            //Lisa  
+    //Body            //Body  
+    ellipse(familyX +200, familyY +25, familyW +5, familyH);            ellipse(familyX +200, familyY +25, familyW +5, familyH);  
+      
+    //Arms            //Arms  
+    ellipse(familyX +235, familyY +20, familyW, familyH -93);            ellipse(familyX +235, familyY +20, familyW, familyH -93);  
+    ellipse(familyX +165, familyY +20, familyW, familyH -93);            ellipse(familyX +165, familyY +20, familyW, familyH -93);  
+      
+    //Legs            //Legs  
+    ellipse(familyX +190, familyY +85, familyW -31, familyH -60);            ellipse(familyX +190, familyY +85, familyW -31, familyH -60);  
+    ellipse(familyX +210, familyY +85, familyW -31, familyH -60);            ellipse(familyX +210, familyY +85, familyW -31, familyH -60);  
+      
+    //Head            //Head  
+    fill(255, 255, 0);            fill(255, 255, 0);  
+    ellipse(familyX +200, familyY -25, familyW, familyH -60);            ellipse(familyX +200, familyY -25, familyW, familyH -60);  
+    triangle(familyX +218, familyY -35, familyX +240, familyY -25, familyX +218, familyY -15);            triangle(familyX +218, familyY -35, familyX +240, familyY -25, familyX +218, familyY -15);  
+    triangle(familyX +190, familyY -35, familyX +220, familyY -55, familyX +220, familyY -35);            triangle(familyX +190, familyY -35, familyX +220, familyY -55, familyX +220, familyY -35);  
+    triangle(familyX +185, familyY -58, familyX +205, familyY -45, familyX +183, familyY -38);            triangle(familyX +185, familyY -58, familyX +205, familyY -45, familyX +183, familyY -38);  
+    triangle(familyX +160, familyY -37, familyX +180, familyY -20, familyX +185, familyY -40);            triangle(familyX +160, familyY -37, familyX +180, familyY -20, familyX +185, familyY -40);  
+      
+    fill(255, 255, 255);            fill(255, 255, 255);  
+    ellipse(familyX +190, familyY -25, familyW -30, familyH -90);            ellipse(familyX +190, familyY -25, familyW -30, familyH -90);  
+    ellipse(familyX +210, familyY -25, familyW -30, familyH -90);            ellipse(familyX +210, familyY -25, familyW -30, familyH -90);  
+    fill(0, 0, 0);            fill(0, 0, 0);  
+    ellipse(familyX +190, familyY -25, familyW -35, familyH -95);            ellipse(familyX +190, familyY -25, familyW -35, familyH -95);  
+    ellipse(familyX +210, familyY -25, familyW -35, familyH -95);            ellipse(familyX +210, familyY -25, familyW -35, familyH -95);  
+    ellipse(familyX +200, familyY -15, familyW -25, familyH -90);            ellipse(familyX +200, familyY -15, familyW -25, familyH -90);  
+      
+      
+    //Maggie            //Maggie  
+    //Head            //Head  
+    fill(255, 255, 0);            fill(255, 255, 0);  
+    ellipse(familyX +300, familyY -25, familyW, familyH -60);            ellipse(familyX +300, familyY -25, familyW, familyH -60);  
+    triangle(familyX +318, familyY -35, familyX +340, familyY -25, familyX +318, familyY -15);            triangle(familyX +318, familyY -35, familyX +340, familyY -25, familyX +318, familyY -15);  
+    triangle(familyX +290, familyY -35, familyX +320, familyY -55, familyX +320, familyY -35);            triangle(familyX +290, familyY -35, familyX +320, familyY -55, familyX +320, familyY -35);  
+    triangle(familyX +285, familyY -58, familyX +305, familyY -45, familyX +283, familyY -38);            triangle(familyX +285, familyY -58, familyX +305, familyY -45, familyX +283, familyY -38);  
+    triangle(familyX +260, familyY -37, familyX +280, familyY -25, familyX +285, familyY -38);            triangle(familyX +260, familyY -37, familyX +280, familyY -25, familyX +285, familyY -38);  
+      
+    fill(255, 255, 255);            fill(255, 255, 255);  
+    ellipse(familyX +290, familyY -25, familyW -30, familyH -90);            ellipse(familyX +290, familyY -25, familyW -30, familyH -90);  
+    ellipse(familyX +310, familyY -25, familyW -30, familyH -90);            ellipse(familyX +310, familyY -25, familyW -30, familyH -90);  
+    fill(0, 0, 0);            fill(0, 0, 0);  
+    ellipse(familyX +290, familyY -25, familyW -35, familyH -95);            ellipse(familyX +290, familyY -25, familyW -35, familyH -95);  
+    ellipse(familyX +310, familyY -25, familyW -35, familyH -95);            ellipse(familyX +310, familyY -25, familyW -35, familyH -95);  
+    ellipse(familyX +300, familyY -15, familyW -25, familyH -90);          ellipse(familyX +300, familyY -15, familyW -25, familyH -90);
+  }        }
+}        }  

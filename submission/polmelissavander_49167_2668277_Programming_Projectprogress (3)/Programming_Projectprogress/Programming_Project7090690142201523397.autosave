@@ -1,0 +1,81 @@
+Shop shop;  
+Donuts [] donuts = new Donuts[10]; 
+
+Background [] background = new Background[1000];  
+Family family;  
+Production production;  
+Productionline productionline;
+Donutgameleft[] donutgameleft = new Donutgameleft[7];
+Donutgameright[] donutgameright = new Donutgameright[5];
+float timer;
+PImage drip;
+PImage maggie;
+PImage marge;
+PImage bart;
+PImage lisa;
+void setup() {  
+  size(1800, 950);   
+  shop = new Shop(700, 250, 400, 250, color(255, 102, 179));  
+  family = new Family(1300, 325, 40, 100);  
+  production = new Production(0, 400);  
+  productionline = new Productionline(0, 400);
+
+  for (int i = 0; i < background.length; i++) {  
+    background[i] = new Background(random(width), random(650, 950), 50, 50);
+  }  
+
+  for (int i = 0; i < donuts.length; i++) {  
+    donuts[i] = new Donuts(random(0, 900), 400, 50, 50);
+  }
+
+  for (int i = 0; i < donutgameleft.length; i++) {  
+    donutgameleft[i] = new Donutgameleft(1020, 420);
+  }
+  for (int i = 0; i < donutgameright.length; i++) {  
+    donutgameright[i] = new Donutgameright(1020, 420);
+  }
+  drip = loadImage("Drip1.png");
+
+  production.images();
+  family.images();
+}  
+
+void draw() {  
+  background(255, 255, 255);  
+  fill(255, 255, 255);  
+  rect(0, 500, 1800, 500);   
+  image(drip, 0, 0);   
+  image(drip, 600, 0);   
+  image(drip, 1200, 0);  
+  
+  production.display();  
+  productionline.display();
+  productionline.move();
+
+  for (int i = 0; i < donuts.length; i++) {  
+    donuts[i].move();  
+    donuts[i].display();
+  }  
+
+  shop.display();  
+
+  for (int i = 0; i < background.length; i++) {  
+    background[i].display();
+  }  
+
+  family.display();
+  for (int i = 0; i < donutgameright.length; i++) {  
+    donutgameright[i].display();
+    donutgameright[i].move();
+  }
+  for (int i = 0; i < donutgameleft.length; i++) {  
+    donutgameleft[i].display();
+    donutgameleft[i].move();
+  }
+} 
+  }
+  for (int i = 0; i < donutgameleft.length; i++) {  
+    donutgameleft[i].display();
+    donutgameleft[i].move();
+  }
+} 

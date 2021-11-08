@@ -1,0 +1,58 @@
+class Background {  
+
+  float backgroundX;  
+  float backgroundY;  
+  float backgroundW;  
+  float backgroundH;  
+
+  Background(float initX, float initY, float initW, float initH) {  
+    backgroundX = initX;  
+    backgroundY = initY;  
+    backgroundW = initW;  
+    backgroundH = initH;
+  }  
+
+  void display() {  
+    stroke(1);  
+
+    //Mini donut  
+    fill(222, 184, 135);  
+    ellipse(backgroundX, backgroundY, backgroundW, backgroundH); //100, 100, 50, 50  
+
+    fill(255, 255, 255);  
+    ellipse(backgroundX, backgroundY, backgroundW -35, backgroundH -35);  
+
+    //Topping mini donuts
+    noStroke();
+    fill(255, 102, 179);
+    ellipse(backgroundX -15, backgroundY, backgroundW -33, backgroundH -33);
+    ellipse(backgroundX -10, backgroundY -10, backgroundW -33, backgroundH -33);
+    ellipse(backgroundX +15, backgroundY, backgroundW -33, backgroundH -33);
+    ellipse(backgroundX -10, backgroundY +10, backgroundW -33, backgroundH -33);
+    ellipse(backgroundX +10, backgroundY -10, backgroundW -33, backgroundH -33);
+    ellipse(backgroundX +10, backgroundY +10, backgroundW -33, backgroundH -33);
+    ellipse(backgroundX, backgroundY -15, backgroundW -33, backgroundH -33);    
+    ellipse(backgroundX, backgroundY +15, backgroundW -33, backgroundH -33); 
+    
+    //Sprinkles mini donuts
+    //White
+    fill(255, 255, 255);
+    ellipse(backgroundX -15, backgroundY, backgroundW -45, backgroundH -47);
+    ellipse(backgroundX +10, backgroundY +9, backgroundW -45, backgroundH -47);
+
+    //Yellow
+    fill(255, 255, 0);
+    ellipse(backgroundX -10, backgroundY +13, backgroundW -45, backgroundH -47);   
+    ellipse(backgroundX -9, backgroundY -10, backgroundW -45, backgroundH -47);    
+
+    //Red
+    fill(255, 0, 0);
+    ellipse(backgroundX +13, backgroundY -10, backgroundW -45, backgroundH -47);    
+    ellipse(backgroundX +2, backgroundY +17, backgroundW -45, backgroundH -47); 
+
+    //Cyan
+    fill(0, 255, 255);
+    ellipse(backgroundX +15, backgroundY, backgroundW -45, backgroundH -47);    
+    ellipse(backgroundX, backgroundY -15, backgroundW -45, backgroundH -47);
+  }
+}  

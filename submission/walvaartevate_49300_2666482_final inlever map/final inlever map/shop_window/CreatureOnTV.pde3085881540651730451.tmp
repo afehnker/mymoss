@@ -1,0 +1,95 @@
+/*
+This is the class of the creature that is displayed on the television when it is turned on.
+ When the tv is turned on, a new layer with the exact same size of the screen will be placed over the black screen of the television
+ when it is turned off.  So that it looks like that the screen changes but it is just another layer on top of it.
+ In addition, over the screen layer, creature is displayed thath bounces of the walls. When the creature bounced of the wall, the word "Biem!"
+ will be displayed for a seccond. 
+ */
+class Creature {
+  int x;
+  int y;
+  int dx = 2; //twijfel !!!!!!!!!!!!!!!!!!!!!!!!!!! (moeten die waardes blijven)
+  int red = 255;
+  int green = 255;
+  int blue = 225;
+  boolean tvOn = false;
+  color redBackground = 255;
+  color greenBackground = 255;
+  color blueBackground = 255;
+  int touchCounter= 0 ; //hieroo ook twijffel
+
+
+
+
+  void display() {
+
+
+
+    if (tvOn == true) {
+      pushMatrix();
+      translate(television01.xTelevision, television01.yTelevision);
+
+      //television screen if television is turned on
+      fill(redBackground, greenBackground, blueBackground);
+      rect(0, -8, 180, 135, 30);
+
+      //Creature
+      fill(red, green, blue);
+      stroke(0);
+      strokeWeight(3);
+      triangle(x-20, y+12, x+20, y+12, x, y);//wings
+      ellipse(x, y+10, 20, 40);//body
+      ellipse(x, y-10, 40, 20);//head
+      arc(x, y-8, 7, 5, 0, PI, OPEN); //mouth
+      fill(0);
+      ellipse(x+5, y-12, 3, 3); //eye left
+      ellipse(x-5, y-12, 3, 3); //eye right
+      for (int i=0; i<lightBulb01.length; i++) {
+      }
+
+      if ((x<=-50 && dx==2)|| (x>=50 && dx==-2)) { // if creature touched border --> "Biem" will be displayed for a seccond (the word "Biem!" is a Dutch meme)
+        textSize(20);
+        textAlign(CENTER);
+        text("BIEM!", 0, 50);
+      }
+      popMatrix();
+    }
+  }
+
+  void move() {
+    x = x + dx;
+    if (x==70 &&tvOn==true) {
+      dx = -2;
+      red = int(random(0, 255));
+      green = int (random(0, 255));
+      blue = int(random(0, 255));
+      redBackground=int (random(150, 255));
+      greenBackground=int (random(150, 255));
+      blueBackground= int (random(150, 255));
+      touchCounter = touchCounter + 1;
+    }
+    if (x==(-70) &&tvOn==true) {
+      dx= 2;
+      fill(random(0, 255), random(0, 255), random(0, 255));
+      red = int(random(0, 255));
+      green = int(random(0, 255));
+      blue = int(random(0, 255));
+      redBackground=int (random(150, 255));
+      greenBackground=int (random(150, 255));
+      blueBackground= int (random(150, 255));
+      touchCounter = touchCounter + 1;
+    }
+  }
+
+
+  void update(int initXmouse, int initYmouse) {
+    int xMouse = initXmouse;
+    int yMouse = initYmouse;
+    if (dist(television01.xButton+television01.xTelevision, television01.yButton+television01.yTelevision, xMouse, yMouse)<=10) {
+      tvOn = true; //turns on television 
+    }
+    if (dist(television01.xButton+television01.xTelevision+30, television01.yButton+television01.yTelevision, xMouse, yMouse)<=10 && tvOn==true) {
+      tvOn = false; //turns off television 
+    }
+  }
+}

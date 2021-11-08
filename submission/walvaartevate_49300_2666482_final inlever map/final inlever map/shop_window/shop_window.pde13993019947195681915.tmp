@@ -1,0 +1,59 @@
+/*
+ShopWindow final project - Eva te Walvaart
+ This program displays the shop window from Electro World, Haaksbergen.
+ 
+ //delete empty constructors
+ 
+ 
+ */
+Radio radio01;
+Television television01;
+Underground underground01;
+LightBulb[] lightBulb01= new LightBulb[15];
+LampOnTv lampOnTv01;
+LightSwitch lightSwitchBulbs;
+Creature creature01;
+
+color ColorBulbs= color(0, 0, 0);
+
+
+void setup() {
+  size(950, 800);
+  rectMode(CENTER);
+  radio01 = new Radio(600, height-320+55, 300, 200);
+  creature01 = new Creature();
+  television01 = new Television(200, height-320+55);
+  underground01 = new Underground();
+  lightSwitchBulbs = new LightSwitch(60, 400);
+
+  for (int i=0; i<lightBulb01.length; i++) {
+    lightBulb01[i] = new LightBulb();
+  }
+  lampOnTv01 = new LampOnTv();
+}
+
+void draw() {
+  background(255, 160, 226);
+  radio01.display();
+  underground01.display();
+  television01.display();
+  lampOnTv01.display();
+  creature01.display();
+
+  //hover over light swich --> lamp, on/off
+  lightSwitchBulbs.display();
+
+  for (int i=0; i<lightBulb01.length; i++) {
+    lightBulb01[i].display(ColorBulbs);
+  }
+}
+
+void mouseClicked() {
+  creature01.update(mouseX, mouseY);
+  lightSwitchBulbs.update(mouseX, mouseY);
+}
+
+
+//click on lamp --> on/off
+//click on tv --> video
+//click on radio on and off

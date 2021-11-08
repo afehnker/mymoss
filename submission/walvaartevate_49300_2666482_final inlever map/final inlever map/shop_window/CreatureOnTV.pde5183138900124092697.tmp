@@ -1,0 +1,56 @@
+class Creature {
+  int x=0;
+  int y=0;
+  int dx = 5;
+  int red = 255;
+  int green = 255;
+  int blue = 225;
+  int xMouse;
+  int yMouse;
+  float xButton;
+  float yButton;
+  boolean mouseOver = false;
+
+  Creature() {
+  }
+
+  void display() {
+  
+    if (mouseOver == true) {
+      pushMatrix();
+      translate(television01.xTelevision, television01.yTelevision);
+      //fill(random(0, 255), random(0, 255), random(0, 255));
+      fill(red, green, blue);
+      stroke(0);
+      strokeWeight(3);
+      ellipse(x, y+10, 20, 40);
+      ellipse(x, y-10, 40, 20);
+      x = x + dx;
+      if (x==70) {
+        dx = -5;
+        red = int(random(0, 255));
+        green = int (random(0, 255));
+        blue = int(random(0, 255));
+      }
+      if (x==(-70)) {
+        dx= 5;
+        fill(random(0, 255), random(0, 255), random(0, 255));
+        red = int(random(0, 255));
+        green = int(random(0, 255));
+        blue = int(random(0, 255));
+      }
+      popMatrix();
+    }
+  } // end of display
+
+  void update(int initXmouse, int initYmouse) {
+       xMouse = initXmouse;
+    yMouse = initYmouse;
+    if (dist(television01.xButton+television01.xTelevision, television01.yButton+television01.yTelevision, xMouse, yMouse)<=10) {
+    mouseOver = true;
+    }
+   if (dist(television01.xButton+television01.xTelevision+30, television01.yButton+television01.yTelevision, xMouse, yMouse)<=11 && mouseOver==true) {
+     mouseOver = false;
+    }
+  }
+  }
